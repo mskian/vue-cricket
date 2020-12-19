@@ -1,5 +1,7 @@
 # Vue Cricket
 
+![build-test](https://github.com/mskian/vue-cricket/workflows/build-test/badge.svg)  
+
 Get Real-time Live Cricket Score Without Refreshing the page.
 
 ## API
