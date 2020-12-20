@@ -16,7 +16,7 @@
               <br>
               <div class="buttons is-centered">
                 <button id="installPWA" class="button is-info pwa-buttons" @click.prevent="showInstallPrompt()">
-                  Install App
+                  ⚛ Install App
                 </button>
               </div>
               <div class="content table table is-bordered table is-striped table is-narrow table is-hoverable">
@@ -57,7 +57,7 @@
               </div>
               <div class="buttons is-centered">
                 <button class="button is-warning pwa-button" @click.prevent="getResult">
-                  {{ loading ? "Loading data..." : "Refresh Score" }}
+                  {{ loading ? "Loading data..." : "🔄 Refresh Score" }}
                 </button>
               </div>
             </div>
@@ -193,7 +193,6 @@ button {
 .pwa-buttons {
     font-weight: 700;
     font-size: 14px;
-    text-transform: uppercase;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
     border-radius: 32px;
     padding: 8px;
@@ -202,7 +201,7 @@ button {
    -moz-font-smoothing: antialiased !important;
    text-rendering: optimizelegibility !important;
 	width: 10rem !important;
-	min-height: 2.5rem;
+	min-height: 2rem;
 }
 table {
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
@@ -212,6 +211,9 @@ table {
    -moz-font-smoothing: antialiased !important;
    text-rendering: optimizelegibility !important;
    border-bottom:2px solid #bbb !important;background-color:#d3d3d3
+}
+th {
+   white-space: nowrap;
 }
 .cooked table thead,.d-editor-preview table thead{border-bottom:2px solid #bbb !important;background-color:#d3d3d3}.cooked table tr,.d-editor-preview table tr{border-bottom:1px solid #bbb}
 .is-horizontal-center {
@@ -241,82 +243,6 @@ pre code {
     font-size: inherit;
     line-height: inherit;
     color: inherit;
-}
-.search-output {
-    text-align: center;
-    margin: 0 auto;
-}
-.search-output {
-    max-width: 25rem;
-}
-.card-content.login {
-    background-color: #ffe96e;
-    box-shadow: 0 2px 4px #5351464d;
-    border-radius: 32px;
-    -moz-osx-font-smoothing: grayscale;
-   -webkit-font-smoothing: antialiased !important;
-   -moz-font-smoothing: antialiased !important;
-   text-rendering: optimizelegibility !important;
-    }
-    .card-content.login {
-        border: none;
-        padding-top: 50px;
-        padding-bottom: 50px;
-}
-.user-form {
-    font-family: 'Nunito', sans-serif;
-  }
-.user-form p {
-    letter-spacing: .03em;
-    line-height: 20px;
-    margin-bottom: 20px;
-    word-wrap: break-word;
-    font-family: 'Nunito', sans-serif;
-    font-size: 16px;
-    color: #221f1f;
-    -moz-osx-font-smoothing: grayscale;
-   -webkit-font-smoothing: antialiased !important;
-   -moz-font-smoothing: antialiased !important;
-   text-rendering: optimizelegibility !important;
-}
-.user-form button {
-    display: flex;
-    flex-grow: 0.3;
-    font-family: 'Nunito', sans-serif;
-    font-weight: 700;
-    font-size: 14px;
-    text-transform: uppercase;
-    border-radius: 32px;
-    padding: 12px;
-    -moz-osx-font-smoothing: grayscale;
-   -webkit-font-smoothing: antialiased !important;
-   -moz-font-smoothing: antialiased !important;
-   text-rendering: optimizelegibility !important;
-}
-.user-form li {
-    line-height: 20px;
-    margin-bottom: 21px;
-    word-wrap: break-word;
-    font-family: 'Nunito', sans-serif;
-    font-size: 16px;
-    color: #221f1f;
-    -moz-osx-font-smoothing: grayscale;
-   -webkit-font-smoothing: antialiased !important;
-   -moz-font-smoothing: antialiased !important;
-   text-rendering: optimizelegibility !important;
-}
-.user-form input {
-    display: flex;
-    flex-grow: 0.3;
-    font-family: 'Nunito', sans-serif;
-    font-weight: 700;
-    font-size: 14px;
-    border-radius: 32px;
-    padding: 12px;
-    -moz-osx-font-smoothing: grayscale;
-   -webkit-font-smoothing: antialiased !important;
-   -moz-font-smoothing: antialiased !important;
-   text-rendering: optimizelegibility !important;
 }
 .textbox {
     display: flex;
