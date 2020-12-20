@@ -177,6 +177,7 @@ button {
     max-width: 100%;
 }
 .pwa-button {
+    font-family: 'Nunito', sans-serif;
     font-weight: 700;
     font-size: 14px;
     text-transform: uppercase;
@@ -191,6 +192,7 @@ button {
 	min-height: 2.6rem;
 }
 .pwa-buttons {
+    font-family: 'Nunito', sans-serif;
     font-weight: 700;
     font-size: 14px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
