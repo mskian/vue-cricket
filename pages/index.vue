@@ -66,7 +66,6 @@
       </section>
     </div>
   </div>
-  </div>
 </template>
 
 <script>
@@ -106,7 +105,7 @@ export default {
 @import url('https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600;700;800;900&display=swap');
 body {
   font-size: 16px;
-  background-color: #35535c;
+  background-color: #1d3557;
    height: 100vh;
   color: rgba(0, 0, 0, 0.6);
   font-family: 'Nunito', sans-serif;
