@@ -24,40 +24,73 @@
                   <tbody>
                     <tr>
                       <th>🏏</th>
-                      <td>{{ results.title }}</td>
+                      <td v-if="results.title === 'Data Not Found'">
+                        {{ loading ? "Loading Match data" : 'No Live Match' }}
+                      </td>
+                      <td v-else>
+                        {{ loading ? "Loading Match data" : results.title }}
+                      </td>
                     </tr>
                     <tr>
                       <th>📊</th>
-                      <td>{{ results.update }}</td>
+                      <td v-if="results.update === 'Data Not Found'">
+                        {{ loading ? "Loading Match data" : 'No Live Match' }}
+                      </td>
+                      <td v-else>
+                        {{ loading ? "Loading Match data" : results.update }}
+                      </td>
                     </tr>
                     <tr>
                       <th>🔴</th>
-                      <td>{{ results.current }}</td>
+                      <td v-if="results.current === 'Data Not Found'">
+                        {{ loading ? "Loading Match data" : 'No Live Match' }}
+                      </td>
+                      <td v-else>
+                        {{ loading ? "Loading Match data" : results.current }}
+                      </td>
                     </tr>
                     <tr>
                       <th>📉</th>
-                      <td>{{ results.runrate }}</td>
-                    </tr>
-                    <tr>
-                      <th>✊</th>
-                      <td>
-                        {{ results.batsman }} - {{ results.batsmanrun }}{{ results.ballsfaced }}
+                      <td v-if="results.runrate === 'Data Not Found'">
+                        {{ loading ? "Loading Match data" : 'No Live Match' }}
+                      </td>
+                      <td v-else>
+                        {{ loading ? "Loading Match data" : results.runrate }}
                       </td>
                     </tr>
                     <tr>
                       <th>✊</th>
-                      <td>{{ results.bowler }} - {{ results.bowlerover }} Over - {{ results.bowlerruns }} Run and {{ results.bowlerwickets }} Wicket</td>
+                      <td v-if="results.batsman === 'Data Not Found'">
+                        {{ loading ? "Loading Match data" : 'No Live Match' }}
+                      </td>
+                      <td v-else>
+                        {{ loading ? "Loading Match data" : results.batsman }} {{ loading ? "" : "\t" + "-" + "\t" + results.batsmanrun }}{{ loading ? "" : results.ballsfaced }}
+                      </td>
+                    </tr>
+                    <tr>
+                      <th>✊</th>
+                      <td v-if="results.bowler === 'Data Not Found'">
+                        {{ loading ? "Loading Match data" : 'No Live Match' }}
+                      </td>
+                      <td v-else>
+                        {{ loading ? "Loading Match data" : results.bowler }} {{ loading ? " " : "\t" + "-" + "\t" + results.bowlerover }} {{ loading ? " " : "Over" + results.bowlerruns }} {{ loading ? " " : "Run and" + results.bowlewickets + "Wicket" }}
+                      </td>
                     </tr>
                     <tr>
                       <th>😳</th>
-                      <td>{{ results.lastwicket }}</td>
+                      <td v-if="results.lastwicket === 'Data Not Found'">
+                        {{ loading ? "Loading Match data" : 'No Live Match' }}
+                      </td>
+                      <td v-else>
+                        {{ loading ? "Loading Match data" : results.lastwicket }}
+                      </td>
                     </tr>
                   </tbody>
                 </table>
               </div>
               <div class="buttons is-centered">
                 <button class="button is-warning pwa-button" @click.prevent="getResult">
-                  {{ loading ? "Loading data..." : "🔄 Refresh Score" }}
+                  {{ loading ? "Loading Data" : "🔄 Refresh Score" }}
                 </button>
               </div>
             </div>
@@ -76,7 +109,8 @@ export default {
   data () {
     return {
       showInstallPrompt: null,
-      results: {}
+      results: {},
+      loading: false
     }
   },
   async mounted () {

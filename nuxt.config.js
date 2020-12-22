@@ -33,7 +33,9 @@ export default {
       {
         name: 'apple-mobile-web-app-title',
         content: 'Live Score'
-      },
+      }
+    ],
+    link: [
       {
         rel: 'shortcut icon',
         href: '/icons/Icon-32.png'
@@ -66,8 +68,9 @@ export default {
       {
         rel: 'apple-touch-icon',
         sizes: '512x512',
-        href: '/icons/Icon-192.png'
-      }
+        href: '/icons/Icon-512.png'
+      },
+      { rel: 'dns-prefetch', href: 'https://fonts.googleapis.com' }
     ]
   },
   loading: { color: '#e84b0d' },
