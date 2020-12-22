@@ -70,7 +70,10 @@ export default {
         sizes: '512x512',
         href: '/icons/Icon-512.png'
       },
-      { rel: 'dns-prefetch', href: 'https://fonts.googleapis.com' }
+      { rel: 'dns-prefetch', href: 'https://fonts.googleapis.com' },
+      { rel: 'dns-prefetch', href: 'https://cricket-api.vercel.app' },
+      { rel: 'dns-prefetch', href: 'https://fonts.gstatic.com' },
+      { rel: 'dns-prefetch', href: 'https://cdn.jsdelivr.net' }
     ]
   },
   loading: { color: '#e84b0d' },
