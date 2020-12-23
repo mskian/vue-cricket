@@ -77,6 +77,7 @@ export default {
     ]
   },
   loading: { color: '#e84b0d' },
+  generate: { fallback: '404.html' },
   // Global CSS (https://go.nuxtjs.dev/config-css)
   css: [
   ],
