@@ -20,7 +20,7 @@
                 </button>
               </div>
               <div class="content table table is-bordered table is-striped table is-narrow table is-hoverable">
-                <table v-if="results.update === 'Data Not Found'">
+                <table v-if="results.current !== 'Data Not Found'">
                   <tbody>
                     <tr>
                       <th>🏏</th>
@@ -73,7 +73,7 @@
                         {{ loading ? "Loading Match data" : 'No Live Match' }}
                       </td>
                       <td v-else>
-                        {{ loading ? "Loading Match data" : results.bowler }} {{ loading ? " " : "\t" + "-" + "\t" + results.bowlerover }} {{ loading ? " " : "Over" + results.bowlerruns }} {{ loading ? " " : "Run and" + results.bowlewickets + "Wicket" }}
+                        {{ loading ? "Loading Match data" : results.bowler }} {{ loading ? " " : "\t" + "-" + "\t" + results.bowlerover }} {{ loading ? " " : "Over" + "\t" + results.bowlerruns }} {{ loading ? " " : "Run and" + "\t" + results.bowlerwickets + "\t" + "Wicket" }}
                       </td>
                     </tr>
                     <tr>
@@ -87,12 +87,23 @@
                     </tr>
                   </tbody>
                 </table>
-                <table v-else>
+                <table v-else-if="results.current === 'Data Not Found'">
                   <tbody>
                     <tr>
                       <td>
                         <p class="has-text-centered">
                           {{ loading ? "Loading Match data" : "🔴 Sorry Currently No Live Match" }}
+                        </p>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+                <table v-else>
+                  <tbody>
+                    <tr>
+                      <td>
+                        <p class="has-text-centered">
+                          {{ loading ? "Loading Match data" : "🔴 No Live Match Data" }}
                         </p>
                       </td>
                     </tr>
