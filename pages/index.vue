@@ -16,11 +16,11 @@
               <br>
               <div class="buttons is-centered">
                 <button id="installPWA" class="button is-info pwa-buttons" @click.prevent="showInstallPrompt()">
-                  ⚛ Install App
+                  🍪 Install App
                 </button>
               </div>
               <div class="content table table is-bordered table is-striped table is-narrow table is-hoverable">
-                <table>
+                <table v-if="results.update === 'Data Not Found'">
                   <tbody>
                     <tr>
                       <th>🏏</th>
@@ -87,10 +87,21 @@
                     </tr>
                   </tbody>
                 </table>
+                <table v-else>
+                  <tbody>
+                    <tr>
+                      <td>
+                        <p class="has-text-centered">
+                          {{ loading ? "Loading Match data" : "🔴 Sorry Currently No Live Match" }}
+                        </p>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
               </div>
               <div class="buttons is-centered">
                 <button class="button is-warning pwa-button" @click.prevent="getResult">
-                  {{ loading ? "Loading Data" : "🔄 Refresh Score" }}
+                  {{ loading ? "🔄 Updating Score" : "🔄 Refresh Score" }}
                 </button>
               </div>
             </div>
@@ -136,13 +147,13 @@ export default {
 </script>
 
 <style>
-@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;400;500;600;700&display=swap');
 body {
   font-size: 16px;
   background-color: #1d3557;
    height: 100vh;
   color: rgba(0, 0, 0, 0.6);
-  font-family: 'Nunito', sans-serif;
+  font-family: 'Fira Code', monospace;
   font-weight: 600;
   line-height: 1.618;
 	-webkit-font-smoothing: antialiased;
@@ -184,7 +195,6 @@ a:hover, a:focus, a:active {
 .content a {
     color: #ffffff;
 }
-
 .notice {
     max-width: 25rem;
 }
@@ -211,7 +221,7 @@ button {
     max-width: 100%;
 }
 .pwa-button {
-    font-family: 'Nunito', sans-serif;
+    font-family: 'Fira Code', monospace;
     font-weight: 700;
     font-size: 14px;
     text-transform: uppercase;
@@ -223,21 +233,22 @@ button {
    -moz-font-smoothing: antialiased !important;
    text-rendering: optimizelegibility !important;
 	width: 12rem !important;
-	min-height: 2.6rem;
+	min-height: 2.2rem;
 }
 .pwa-buttons {
-    font-family: 'Nunito', sans-serif;
+    font-family: 'Fira Code', monospace;
     font-weight: 700;
     font-size: 14px;
+    text-transform: uppercase;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
     border-radius: 32px;
-    padding: 8px;
+    padding: 12px;
     -moz-osx-font-smoothing: grayscale;
    -webkit-font-smoothing: antialiased !important;
    -moz-font-smoothing: antialiased !important;
    text-rendering: optimizelegibility !important;
 	width: 10rem !important;
-	min-height: 2rem;
+	min-height: 2.2rem;
 }
 table {
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
@@ -280,28 +291,7 @@ pre code {
     line-height: inherit;
     color: inherit;
 }
-.textbox {
-    display: flex;
-    flex-grow: 0.3;
-    font-family: 'Nunito', sans-serif;
-    font-weight: 700;
-    font-size: 14px;
-    border-radius: 32px;
-    padding: 12px;
-    -moz-osx-font-smoothing: grayscale;
-   -webkit-font-smoothing: antialiased !important;
-   -moz-font-smoothing: antialiased !important;
-   text-rendering: optimizelegibility !important;
-}
-blockquote {
-    letter-spacing: .03em;
-    font-family: 'Nunito', sans-serif;
-    -moz-osx-font-smoothing: grayscale;
-   -webkit-font-smoothing: antialiased !important;
-   -moz-font-smoothing: antialiased !important;
-   text-rendering: optimizelegibility !important;
-  }
-  .content h1 {
+.content h1 {
     font-size:21px;
     font-weight: 700;
 }
@@ -320,30 +310,12 @@ blockquote {
 p {
     letter-spacing: .03em;
     word-wrap: break-word;
-    font-family: 'Nunito', sans-serif;
+    font-family: 'Fira Code', monospace;
     font-size: 16px;
     color: #221f1f;
     -moz-osx-font-smoothing: grayscale;
    -webkit-font-smoothing: antialiased !important;
    -moz-font-smoothing: antialiased !important;
    text-rendering: optimizelegibility !important;
-}
-.score {
-    letter-spacing: .03em;
-    word-wrap: break-word;
-    font-family: 'Nunito', sans-serif;
-    font-size: 15px;
-    color: #221f1f;
-    -moz-osx-font-smoothing: grayscale;
-   -webkit-font-smoothing: antialiased !important;
-   -moz-font-smoothing: antialiased !important;
-   text-rendering: optimizelegibility !important;
-}
-hr {
-    background-color: #00b894;
-}
-footer p {
-    font-size: 15px;
-    font-weight: 700;
 }
 </style>

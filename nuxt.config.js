@@ -13,7 +13,7 @@ export default {
         content: 'IE=edge, chrome=1'
       },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { hid: 'description', name: 'description', content: 'Get Real-time - Live Cricket Score.' },
+      { hid: 'description', name: 'description', content: 'Get Real-time - Live Cricket Score Update.' },
       {
         name: 'mobile-web-app-capable',
         content: 'yes'
@@ -108,12 +108,12 @@ export default {
    */
   meta: {
     name: 'Live Cricket Score', // this is needed to change title for all PWA meta tags
-    description: 'Get Real-time - Live Cricket Score.' // this is needed to change title for all PWA meta tags
+    description: 'Get Real-time - Live Cricket Score Update.' // this is needed to change title for all PWA meta tags
   },
   manifest: {
     name: 'Live Score',
     short_name: 'Live Score',
-    description: 'Get Real-time - Live Cricket Score.',
+    description: 'Get Real-time - Live Cricket Score Update.',
     icons: [
       {
         src: '/icons/Icon-48.png',
