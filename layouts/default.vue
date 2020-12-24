@@ -11,7 +11,7 @@ export default {
       link: [
         {
           rel: 'canonical',
-          href: 'https://crilive.netlify.app' + this.$route.path
+          href: 'https://score.sanweb.info' + this.$route.path
         }
       ]
     }
