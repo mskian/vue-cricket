@@ -6,7 +6,7 @@ Get Real-time Live Cricket Score Update without refreshing the page.
 
 ## Features ✨
 
-- Realtime Words data
+- Realtime Score data
 - Progressive Web App
 - Sitemap
 - RSS feed

@@ -159,13 +159,13 @@ export default {
           url: 'https://score.sanweb.info/',
           image: {
             '@type': 'ImageObject',
-            url: 'https:///score.sanweb.info/media/random-score.jpg',
+            url: 'https://score.sanweb.info/media/random-score.jpg',
             width: 1200,
             height: 630
           },
           mainEntityOfPage: {
             '@type': 'WebPage',
-            '@id': 'https:///score.sanweb.info/'
+            '@id': 'https://score.sanweb.info/'
           },
           description: 'Get Real-time Live Cricket Score Update without refreshing the page.'
         }
