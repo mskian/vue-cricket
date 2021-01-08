@@ -11,7 +11,7 @@
                 Live Score 🏏
               </h1>
               <p class="has-text-success has-text-weight-bold has-text-centered">
-                Click Refresh Button to Get Real-time Live Score Updates.
+                Click Refresh Button to Get Real-time Live Cricket Score Updates.
               </p>
               <br>
               <div class="buttons is-centered">
@@ -115,6 +115,29 @@
                   {{ loading ? "🔄 Updating Score" : "🔄 Refresh Score" }}
                 </button>
               </div>
+              <br>
+              <br>
+              <div class="notification is-warning">
+                <br>
+                <p class="has-text-weight-bold has-text-centered">
+                  Our Free Telegram Bot Just start and Get Live Score Update.
+                  <br>
+                  <br>
+                  <span class="buttons is-centered">
+                    <a href="https://telegram.me/livecriscore_bot" class="button is-danger read-random" target="_blank" rel="nofollow noopener">🤖 Start Bot</a>
+                  </span>
+                  <br>
+                  This Web App was Dedicated to Cricket Lovers 💚<br>
+                  Scores are Fetched from Cricbuzz - Unofficial API Data.
+                </p>
+                <br>
+                <div class="buttons is-centered">
+                  <a href="https://github.com/mskian/vue-cricket" class="button is-success read-random" target="_blank" rel="nofollow noopener">📦 Souce Code</a>
+                  <a href="https://github.com/mskian/cricket-api" class="btn button is-link read-random" target="_blank" rel="nofollow noopener">🗃 API Data</a>
+                </div>
+                <br>
+              </div>
+              <br>
             </div>
           </div>
         </div>
@@ -132,6 +155,17 @@ export default {
     return {
       showInstallPrompt: null,
       results: {}
+    }
+  },
+  head () {
+    return {
+      meta: [
+        {
+          hid: 'og:url',
+          property: 'og:url',
+          content: 'https://score.sanweb.info' + this.$route.path
+        }
+      ]
     }
   },
   async mounted () {
@@ -208,19 +242,6 @@ a:hover, a:focus, a:active {
 .notice {
     max-width: 25rem;
 }
-.sign-button {
-    max-width: 100%;
-}
-.sign-button {
-    font-weight: 700;
-    font-size: 14px;
-    text-transform: uppercase;
-    padding: 12px;
-    -moz-osx-font-smoothing: grayscale;
-   -webkit-font-smoothing: antialiased !important;
-   -moz-font-smoothing: antialiased !important;
-   text-rendering: optimizelegibility !important;
-}
 .input-box,
 textarea,
 .sign-button {
@@ -292,15 +313,6 @@ th {
 .buttonpwa:hover {
     background-color: rgb(248, 221, 68);
 }
-code {
-    word-break: break-all;
-}
-pre code {
-    padding: 0;
-    font-size: inherit;
-    line-height: inherit;
-    color: inherit;
-}
 .content h1 {
     font-size:21px;
     font-weight: 700;
@@ -317,15 +329,18 @@ pre code {
     font-size:18px;
     font-weight: 700;
 }
-p {
-    letter-spacing: .03em;
-    word-wrap: break-word;
-    font-family: 'Fira Code', monospace;
-    font-size: 16px;
-    color: #221f1f;
-    -moz-osx-font-smoothing: grayscale;
-   -webkit-font-smoothing: antialiased !important;
-   -moz-font-smoothing: antialiased !important;
-   text-rendering: optimizelegibility !important;
+.read-random {
+	display: flex;
+	flex-grow: 0.3;
+  font-family: 'Fira Code', monospace;
+	font-weight: 800;
+	font-size: 13px;
+	box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+	border-radius: 32px;
+	padding: 10px;
+	-moz-osx-font-smoothing: grayscale;
+	-webkit-font-smoothing: antialiased !important;
+	-moz-font-smoothing: antialiased !important;
+	text-rendering: optimizelegibility !important;
 }
 </style>

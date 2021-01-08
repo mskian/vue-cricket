@@ -1,14 +1,34 @@
-# Vue Cricket
+# Live Cricket Score 🏏
 
 ![build-test](https://github.com/mskian/vue-cricket/workflows/build-test/badge.svg)  
 
-Get Real-time Live Cricket Score Without Refreshing the page.
+Get Real-time Live Cricket Score Update without refreshing the page.
 
-## API
+## Features ✨
 
-Free Live Cricket Score API - [Try Now](https://github.com/mskian/cricket-api)
+- Realtime Words data
+- Progressive Web App
+- Sitemap
+- RSS feed
+- SEO and Social Meta Tags
+- Schema Markup
+- Canonical URL
+- Offline Support
+- Mobile Responsive (Build using Bulma CSS Framework)
 
-## Build Setup
+## API 🍘
+
+Free Live Cricket Score API (PHP) - [@Cricket API](https://github.com/mskian/cricket-api)
+
+## Built with ⚙
+
+- HTML
+- CSS, Bulma CSS Framework
+- JavaScript
+- Vue
+- Nuxt
+
+## Build Setup 📦
 
 ```bash
 # install dependencies
@@ -25,8 +45,6 @@ $ yarn start
 $ yarn generate
 ```
 
-For detailed explanation on how things work, check out [Nuxt.js docs](https://nuxtjs.org).
-
-## LICENSE
+## LICENSE ✅
 
 MIT
