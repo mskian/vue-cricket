@@ -37,7 +37,7 @@
     "axios": "^0.21.1",
     "core-js": "^3.9.0",
     "lodash": "^4.17.20",
-    "nuxt": "^2.14.12"
+    "nuxt": "^2.15.1"
   },
   "devDependencies": {
     "@nuxtjs/eslint-config": "^5.0.0",
