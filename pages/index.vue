@@ -150,6 +150,7 @@
 import axios from 'axios'
 import { debounce } from 'lodash'
 import intializePwa from '~/helpers/pwa'
+import 'bulma/css/bulma.css'
 export default {
   data () {
     return {
@@ -209,7 +210,7 @@ body {
     height: 8px;
   }
   ::-webkit-scrollbar-thumb {
-    background-color: rgba(45, 59, 255, 0.302);
+    background-color: rgba(182, 241, 87, 0.302);
     border-radius: 8px;
   }
   ::-webkit-scrollbar-thumb:hover {
