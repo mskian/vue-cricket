@@ -181,7 +181,7 @@ export default {
   methods: {
     getResult () {
       this.loading = true
-      axios.get('https://cricket-api.vercel.app/live').then((response) => { this.results = response.data.livescore; this.loading = false })
+      axios.get('https://cricket-api.vercel.app/live').then((response) => { this.results = response.data; this.loading = false })
       this.$toast.success('Score Updated', {
         duration: 500
       }
