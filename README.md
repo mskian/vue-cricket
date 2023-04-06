@@ -18,7 +18,7 @@ Get Real-time Live Cricket Score Update without refreshing the page.
 
 ## API 🍘
 
-Free Live Cricket Score API (PHP) - [@Cricket API](https://github.com/mskian/python-cricket-score/tree/main/api)
+Free Python Cricket Score API - [@Cricket API](https://github.com/mskian/python-cricket-score/tree/main/api)
 
 ## Built with ⚙
 

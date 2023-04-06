@@ -56,7 +56,7 @@
                         {{ loading ? "Loading Match data" : 'No Live Match' }}
                       </td>
                       <td v-else>
-                        {{ loading ? "Loading Match data" : results.runrate }}
+                        {{ loading ? "Loading Match data" : 'Run rate: ' + results.runrate }}
                       </td>
                     </tr>
                     <tr>
