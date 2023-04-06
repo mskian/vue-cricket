@@ -2,20 +2,22 @@ module.exports = {
   root: true,
   env: {
     browser: true,
-    es6: true,
     node: true
   },
   parserOptions: {
-    parser: 'babel-eslint'
+    parser: '@babel/eslint-parser',
+    requireConfigFile: false
   },
-  extends: [
-    '@nuxtjs',
-    'plugin:nuxt/recommended'
-  ],
+  extends: ['@nuxtjs', 'plugin:nuxt/recommended', 'prettier'],
   plugins: [
   ],
   // add your custom rules here
   rules: {
-    'no-tabs': 0
+    'vue/multi-word-component-names': [
+      'error',
+      {
+        ignores: ['error']
+      }
+    ]
   }
 }

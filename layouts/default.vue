@@ -1,3 +1,4 @@
+<!-- eslint-disable vue/multi-word-component-names -->
 <template>
   <div>
     <Nuxt />
@@ -11,7 +12,7 @@ export default {
       link: [
         {
           rel: 'canonical',
-          href: 'https://score.sanweb.info' + this.$route.path
+          href: 'https://score.mskian.com' + this.$route.path
         }
       ]
     }

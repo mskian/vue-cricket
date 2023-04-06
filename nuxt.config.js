@@ -45,7 +45,7 @@ export default {
       {
         hid: 'og:image',
         property: 'og:image',
-        content: 'https://score.sanweb.info/media/random-score.jpg'
+        content: 'https://score.mskian.com/media/random-score.jpg'
       },
       {
         hid: 'twitter:title',
@@ -60,12 +60,12 @@ export default {
       {
         hid: 'twitter:image',
         name: 'twitter:image',
-        content: 'https://score.sanweb.info/media/random-score.jpg'
+        content: 'https://score.mskian.com/media/random-score.jpg'
       },
       {
         hid: 'twitter:url',
         name: 'twitter:url',
-        content: 'https://score.sanweb.info/'
+        content: 'https://score.mskian.com/'
       },
       {
         hid: 'twitter:card',
@@ -136,7 +136,7 @@ export default {
         rel: 'alternate',
         type: 'application/rss+xml',
         title: 'Live Cricket Score 🏏',
-        href: 'https://score.sanweb.info/feed.xml'
+        href: 'https://score.mskian.com/feed.xml'
       }
     ],
     script: [
@@ -148,24 +148,24 @@ export default {
           publisher: {
             '@type': 'Organization',
             name: 'Live Cricket Score 🏏',
-            url: 'https://score.sanweb.info/',
+            url: 'https://score.mskian.com/',
             logo: {
               '@type': 'ImageObject',
-              url: 'https://score.sanweb.info/icons/Icon-72.png',
+              url: 'https://score.mskian.com/icons/Icon-72.png',
               width: 72,
               height: 72
             }
           },
-          url: 'https://score.sanweb.info/',
+          url: 'https://score.mskian.com/',
           image: {
             '@type': 'ImageObject',
-            url: 'https://score.sanweb.info/media/random-score.jpg',
+            url: 'https://score.mskian.com/media/random-score.jpg',
             width: 1200,
             height: 630
           },
           mainEntityOfPage: {
             '@type': 'WebPage',
-            '@id': 'https://score.sanweb.info/'
+            '@id': 'https://score.mskian.com/'
           },
           description: 'Get Real-time Live Cricket Score Update without refreshing the page.'
         }
@@ -200,7 +200,7 @@ export default {
     '@nuxtjs/feed'
   ],
   sitemap: {
-    hostname: 'https://score.sanweb.info',
+    hostname: 'https://score.mskian.com',
     gzip: true,
     exclude: ['/404'],
     defaults: {
@@ -215,7 +215,7 @@ export default {
       create (feed) {
         feed.options = {
           title: 'Live Cricket Score 🏏',
-          link: 'https://score.sanweb.info/',
+          link: 'https://score.mskian.com/',
           description: 'Get Real-time Live Cricket Score Update without refreshing the page.'
         }
       },
@@ -297,13 +297,16 @@ export default {
     ]
   },
   // Build Configuration (https://go.nuxtjs.dev/config-build)
-  build: {
-    postcss: {
-      preset: {
-        features: {
-          customProperties: false
-        }
-      }
-    }
-  }
+  // build: {
+  //  postcss: {
+  //    preset: {
+  //      features: {
+  //        customProperties: false
+  //      }
+  //    }
+  //  }
+  // }
+  env: {
+    API_URL: process.env.URL
+  },
 }

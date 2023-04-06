@@ -1,6 +1,6 @@
 # Live Cricket Score 🏏
 
-![build-test](https://github.com/mskian/vue-cricket/workflows/build-test/badge.svg)  
+![build-test](https://github.com/mskian/vue-cricket/workflows/build-test/badge.svg)
 
 Get Real-time Live Cricket Score Update without refreshing the page.
 
@@ -18,7 +18,7 @@ Get Real-time Live Cricket Score Update without refreshing the page.
 
 ## API 🍘
 
-Free Live Cricket Score API (PHP) - [@Cricket API](https://github.com/mskian/cricket-api)
+Free Live Cricket Score API (PHP) - [@Cricket API](https://github.com/mskian/python-cricket-score/tree/main/api)
 
 ## Built with ⚙
 

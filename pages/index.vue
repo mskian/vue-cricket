@@ -1,3 +1,4 @@
+<!-- eslint-disable vue/multi-word-component-names -->
 <template>
   <div class="container">
     <div>
@@ -20,7 +21,7 @@
                 </button>
               </div>
               <div class="content table table is-bordered table is-striped table is-narrow table is-hoverable">
-                <table v-if="results.current !== 'Data Not Found'">
+                <table v-if="results.livescore !== 'Data Not Found'">
                   <tbody>
                     <tr>
                       <th>🏏</th>
@@ -42,11 +43,11 @@
                     </tr>
                     <tr>
                       <th>🔴</th>
-                      <td v-if="results.current === 'Data Not Found'">
+                      <td v-if="results.livescore === 'Data Not Found'">
                         {{ loading ? "Loading Match data" : 'No Live Match' }}
                       </td>
                       <td v-else>
-                        {{ loading ? "Loading Match data" : results.current }}
+                        {{ loading ? "Loading Match data" : results.livescore }}
                       </td>
                     </tr>
                     <tr>
@@ -59,35 +60,26 @@
                       </td>
                     </tr>
                     <tr>
-                      <th>✊</th>
-                      <td v-if="results.batsman === 'Data Not Found'">
+                      <th>🏏</th>
+                      <td v-if="results.batterone === 'Data Not Found'">
                         {{ loading ? "Loading Match data" : 'No Live Match' }}
                       </td>
                       <td v-else>
-                        {{ loading ? "Loading Match data" : results.batsman }} {{ loading ? "" : "\t" + "-" + "\t" + results.batsmanrun }}{{ loading ? "" : results.ballsfaced }}
+                        {{ loading ? "Loading Match data" : results.batterone }} {{ loading ? "" : "\t" + "-" + "\t Run: " + results.batsmanonerun }}{{ loading ? "" : "\t" + " - Balls Faced: " + results.batsmanoneball}}
                       </td>
                     </tr>
                     <tr>
-                      <th>✊</th>
-                      <td v-if="results.bowler === 'Data Not Found'">
+                      <th>🥎</th>
+                      <td v-if="results.bowlerone === 'Data Not Found'">
                         {{ loading ? "Loading Match data" : 'No Live Match' }}
                       </td>
                       <td v-else>
-                        {{ loading ? "Loading Match data" : results.bowler }} {{ loading ? " " : "\t" + "-" + "\t" + results.bowlerover }} {{ loading ? " " : "Over" + "\t" + results.bowlerruns }} {{ loading ? " " : "Run and" + "\t" + results.bowlerwickets + "\t" + "Wicket" }}
-                      </td>
-                    </tr>
-                    <tr>
-                      <th>😳</th>
-                      <td v-if="results.lastwicket === 'Data Not Found'">
-                        {{ loading ? "Loading Match data" : 'No Live Match' }}
-                      </td>
-                      <td v-else>
-                        {{ loading ? "Loading Match data" : results.lastwicket }}
+                        {{ loading ? "Loading Match data" : results.bowlerone }} {{ loading ? " " : "\t" + "-" + "\t" + results.bowleroneover }} {{ loading ? " " : " Over" + "\t" + results.bowleronerun }} {{ loading ? " " : " Run and" + "\t" + results.bowleronewickers + "\t" + "Wicket" }}
                       </td>
                     </tr>
                   </tbody>
                 </table>
-                <table v-else-if="results.current === 'Data Not Found'">
+                <table v-else-if="results.livescore === 'Data Not Found'">
                   <tbody>
                     <tr>
                       <td>
@@ -110,12 +102,32 @@
                   </tbody>
                 </table>
               </div>
-              <div class="buttons is-centered">
+              <div v-if="results.livescore !== 'Data Not Found'" class="buttons is-centered">
                 <button class="button is-warning pwa-button" @click.prevent="getResult">
                   {{ loading ? "🔄 Updating Score" : "🔄 Refresh Score" }}
                 </button>
               </div>
-              <br>
+              <form
+                v-if="results.livescore === 'Data Not Found'"
+                method="GET"
+              >
+              <div class="container">
+              <div class="field has-addons">
+              <input
+                id="match"
+                name="match"
+                class="input is-info score-random"
+                placeholder="Enter Match ID"
+                required
+              />
+              <button
+                class="button is-success score-random"
+              >
+                Get Score
+              </button>
+              </div>
+              </div>
+              </form>
               <br>
               <div class="notification is-warning">
                 <br>
@@ -133,7 +145,7 @@
                 <br>
                 <div class="buttons is-centered">
                   <a href="https://github.com/mskian/vue-cricket" class="button is-success read-random" target="_blank" rel="nofollow noopener">📦 Souce Code</a>
-                  <a href="https://github.com/mskian/cricket-api" class="btn button is-link read-random" target="_blank" rel="nofollow noopener">🗃 API Data</a>
+                  <a href="https://github.com/mskian/python-cricket-score/tree/main/api" class="btn button is-link read-random" target="_blank" rel="nofollow noopener">🗃 API Data</a>
                 </div>
                 <br>
               </div>
@@ -164,7 +176,7 @@ export default {
         {
           hid: 'og:url',
           property: 'og:url',
-          content: 'https://score.sanweb.info' + this.$route.path
+          content: 'https://score.mskian.com' + this.$route.path
         }
       ]
     }
@@ -181,7 +193,7 @@ export default {
   methods: {
     getResult () {
       this.loading = true
-      axios.get('https://cricket-api.vercel.app/live').then((response) => { this.results = response.data; this.loading = false })
+      axios.get(process.env.API_URL + this.$route.query.match).then((response) => { this.results = response.data; this.loading = false })
       this.$toast.success('Score Updated', {
         duration: 500
       }
@@ -201,9 +213,9 @@ body {
   font-family: 'Fira Code', monospace;
   font-weight: 600;
   line-height: 1.618;
-	-webkit-font-smoothing: antialiased;
-	-moz-font-smoothing: grayscale;
-	overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-font-smoothing: grayscale;
+  overflow-x: hidden;
 }
 ::-webkit-scrollbar {
     width: 8px;
@@ -246,8 +258,8 @@ a:hover, a:focus, a:active {
 .input-box,
 textarea,
 .sign-button {
-	width: 45rem !important;
-	min-height: 3rem;
+  width: 45rem !important;
+  min-height: 3rem;
 }
 button {
     max-width: 100%;
@@ -263,9 +275,9 @@ button {
     -moz-osx-font-smoothing: grayscale;
    -webkit-font-smoothing: antialiased !important;
    -moz-font-smoothing: antialiased !important;
-   text-rendering: optimizelegibility !important;
-	width: 12rem !important;
-	min-height: 2.2rem;
+    text-rendering: optimizelegibility !important;
+    width: 12rem !important;
+    min-height: 2.2rem;
 }
 .pwa-buttons {
     font-family: 'Fira Code', monospace;
@@ -278,9 +290,9 @@ button {
     -moz-osx-font-smoothing: grayscale;
    -webkit-font-smoothing: antialiased !important;
    -moz-font-smoothing: antialiased !important;
-   text-rendering: optimizelegibility !important;
-	width: 10rem !important;
-	min-height: 2.2rem;
+    text-rendering: optimizelegibility !important;
+    width: 10rem !important;
+    min-height: 2.2rem;
 }
 table {
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
@@ -299,17 +311,17 @@ th {
     justify-content: center;
 }
 .buttonpwa {
-	display: inline-flex;
-	margin: 4px 0;
-	padding: 8px 16px;
-	border-radius: 4px;
-	background-color: rgb(253, 98, 37);
-	color: #fff;
-	font-size: 18px;
-	cursor: pointer;
-	align-items: center;
-	justify-content: center;
-	flex-grow: 1;
+display: inline-flex;
+margin: 4px 0;
+padding: 8px 16px;
+border-radius: 4px;
+background-color: rgb(253, 98, 37);
+color: #fff;
+font-size: 18px;
+cursor: pointer;
+align-items: center;
+justify-content: center;
+flex-grow: 1;
 }
 .buttonpwa:hover {
     background-color: rgb(248, 221, 68);
@@ -331,17 +343,30 @@ th {
     font-weight: 700;
 }
 .read-random {
-	display: flex;
-	flex-grow: 0.3;
-  font-family: 'Fira Code', monospace;
-	font-weight: 800;
-	font-size: 13px;
-	box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
-	border-radius: 32px;
-	padding: 10px;
-	-moz-osx-font-smoothing: grayscale;
-	-webkit-font-smoothing: antialiased !important;
-	-moz-font-smoothing: antialiased !important;
-	text-rendering: optimizelegibility !important;
+display: flex;
+flex-grow: 0.3;
+font-family: 'Fira Code', monospace;
+font-weight: 800;
+font-size: 13px;
+box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+border-radius: 32px;
+padding: 10px;
+-moz-osx-font-smoothing: grayscale;
+-webkit-font-smoothing: antialiased !important;
+-moz-font-smoothing: antialiased !important;
+text-rendering: optimizelegibility !important;
+}
+.score-random {
+display: flex;
+flex-grow: 0.3;
+font-family: 'Fira Code', monospace;
+font-weight: 800;
+box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+border-radius: 32px;
+padding: 20px;
+-moz-osx-font-smoothing: grayscale;
+-webkit-font-smoothing: antialiased !important;
+-moz-font-smoothing: antialiased !important;
+text-rendering: optimizelegibility !important;
 }
 </style>
