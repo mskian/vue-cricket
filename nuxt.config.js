@@ -307,6 +307,6 @@ export default {
   //  }
   // }
   env: {
-    API_URL: process.env.URL
+    API_URL: process.env.URL || 'https://cricketapi-1-q7206325.deta.app/score?id='
   },
 }
