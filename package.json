@@ -1,7 +1,7 @@
 {
   "name": "vue-cricket",
   "description": "Get Real-time Live Cricket Score Update without refreshing the page.",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "author": "Santhosh Veer",
   "license": "MIT",
   "private": true,
