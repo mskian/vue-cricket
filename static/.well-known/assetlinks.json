@@ -1,0 +1,5 @@
+[{
+    "relation": ["delegate_permission/common.handle_all_urls"],
+    "target" : { "namespace": "android_app", "package_name": "com.mskian.score",
+                 "sha256_cert_fingerprints": ["39:48:B6:97:07:71:26:27:0B:3B:80:4D:8C:15:96:0C:48:1B:40:00:2C:DB:A0:D0:AD:DC:75:A5:88:4F:2F:DE"] }
+  }]

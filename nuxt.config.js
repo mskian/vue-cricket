@@ -23,6 +23,10 @@ export default {
         content: 'no-referrer-when-downgrade'
       },
       {
+        name: 'theme-color',
+        content: '#38ada9'
+      },
+      {
         name: 'mobile-web-app-capable',
         content: 'yes'
       },
@@ -94,10 +98,10 @@ export default {
       }
     ],
     link: [
-      // {
-      //  rel: 'shortcut icon',
-      //  href: '/icons/Icon-32.png'
-      // },
+      {
+        rel: 'shortcut icon',
+        href: '/icons/Icon-32.png'
+      },
       {
         rel: 'apple-touch-icon',
         sizes: '48x48',
@@ -123,11 +127,15 @@ export default {
         sizes: '192x192',
         href: '/icons/Icon-192.png'
       },
-      // {
-      // rel: 'apple-touch-icon',
-      //  sizes: '512x512',
-      //  href: '/icons/Icon-512.png'
-      // },
+      {
+      rel: 'apple-touch-icon',
+      sizes: '512x512',
+      href: '/icons/Icon-512.png'
+      },
+      {
+        rel: 'manifest',
+        href: '/manifest.json'
+      },
       { rel: 'dns-prefetch', href: 'https://fonts.googleapis.com' },
       { rel: 'dns-prefetch', href: 'https://cricket-api.vercel.app' },
       { rel: 'dns-prefetch', href: 'https://fonts.gstatic.com' },
@@ -277,7 +285,8 @@ export default {
     orientation: 'any'
   },
   pwa: {
-    icon: false // disables the icon module
+    icon: false,
+    manifest: false
   },
   workbox: {
     dev: false,

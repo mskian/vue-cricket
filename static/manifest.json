@@ -1,0 +1,35 @@
+{
+    "name": "Live Score",
+    "short_name": "Live Score",
+    "description": "Get Real-time Live Cricket Score Update without refreshing the page.",
+    "icons": [
+      {
+        "src": "/icons/192.png",
+        "sizes": "192x192",
+        "type": "image/png",
+        "purpose": "any"
+      },
+      {
+        "src": "/icons/192.png",
+        "sizes": "192x192",
+        "type": "image/png",
+        "purpose": "maskable"
+    },
+      {
+        "src": "/icons/512.png",
+        "sizes": "512x512",
+        "type": "image/png",
+        "purpose": "any"
+      },
+      {
+        "src": "/icons/512.png",
+        "sizes": "512x512",
+        "type": "image/png",
+        "purpose": "maskable"
+    }
+    ],
+    "start_url": "/",
+    "display": "standalone",
+    "background_color": "#38ada9",
+    "theme_color": "#38ada9"
+  }
