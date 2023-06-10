@@ -4,6 +4,9 @@
 
 Get Real-time Live Cricket Score Update without refreshing the page.
 
+- Current Live Score: **`http://localhost:3000/`**
+- Get Score via Match ID: **`http://localhost:3000/?match=65805`**
+
 ## Features ✨
 
 - Realtime Score data
@@ -43,6 +46,13 @@ $ yarn start
 
 # generate static project
 $ yarn generate
+```
+
+- `env` data
+
+```sh
+URL="https://yourcricketapiurl.com/score?id="
+ID="https://mskian.github.io/api-id/one.json"
 ```
 
 ## LICENSE ✅

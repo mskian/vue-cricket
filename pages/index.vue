@@ -191,9 +191,15 @@ export default {
     this.debounceName = debounce(this.getResult)
   },
   methods: {
-    getResult () {
+    async getResult () {
       this.loading = true
-      axios.get(process.env.API_URL + this.$route.query.match).then((response) => { this.results = response.data; this.loading = false })
+      if(this.$route.query.match === undefined) {
+        const url = process.env.LIVE_URL
+        const response = await axios.get(url);
+        await axios.get(process.env.API_URL + response.data.data_id).then((response) => { this.results = response.data; this.loading = false })
+      } else {
+        await axios.get(process.env.API_URL + this.$route.query.match).then((response) => { this.results = response.data; this.loading = false })
+      }
       this.$toast.success('Score Updated', {
         duration: 500
       }
